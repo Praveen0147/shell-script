@@ -1,5 +1,5 @@
 #!/bin/bash
-# This code is to print number ge/equal 10 or not
+# This code is to print number ge/equal 10 or not --check
 NUMBER=$1
 if [ $NUMBER -ge 10 ]
 then
