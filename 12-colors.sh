@@ -2,9 +2,9 @@
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
-R="\e[31 m"
-G="\e[32 m"
-N="\e[0 m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 USERID=$(id -u)
 VALIDATE ()
 {
