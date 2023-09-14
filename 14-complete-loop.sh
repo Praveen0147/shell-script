@@ -28,7 +28,7 @@ do
     if [ $? -ne 0 ] 
     then  
         yum install $i -y &>>$LOGFILE
-        VALIDATE $? "$i INSTALLATION"
+        VALIDATE $? $i
      else
        echo -e "$G $i installation already happened" 
        exit 1  
