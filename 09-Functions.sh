@@ -6,7 +6,8 @@ VALIDATE ()
   then 
      echo "$2 .. Fail"
   else 
-     echo "$2 ... Pass"   
+     echo "$2 ... Pass"  
+  fi    
 }
 if [ $USERID -ne 0 ]
 then 
