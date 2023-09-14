@@ -5,18 +5,22 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+VALIDATE ()
+{
+  if [ $? -ne 0 ]
+  then 
+     echo "$2 .. Fail"
+  else 
+     echo "$2 ... Pass"  
+  fi    
+}
 for i in $@
 do
     package_name=$i
     rpm -q "$package_name"  
     if [ $? -ne 0 ] 
     then  
-        yum install $i -y
-        if [ $? -eq 0 ]
-        echo -e "$G $i installation successful"
-        else
-        echo -e "$R $i installation fail"
-        fi
+        yum install "$i INSTALLATION"
      else
        echo -e "$G $i installation already happened"   
     fi  
