@@ -23,7 +23,7 @@ fi
 for i in $@
 do
     package_name=$i
-    rpm -q "$package_name"  
+    rpm -q "$package_name"  &>>$LOGFILE
     if [ $? -ne 0 ] 
     then  
         yum install $i -y &>>$LOGFILE
