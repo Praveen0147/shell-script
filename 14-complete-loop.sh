@@ -5,23 +5,32 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+USERID=$(id -u)
 VALIDATE ()
 {
   if [ $? -ne 0 ]
   then 
-     echo "$2 .. Fail"
+     echo "$R $i Installation Failed"
+     exit 1
   else 
-     echo "$2 ... Pass"  
+     echo "$G $i Installation Success"  
   fi    
 }
+if [ $USERID -ne 0 ]
+then 
+   echo " Run with Sudo Access"
+   exit 2
+fi
 for i in $@
 do
     package_name=$i
     rpm -q "$package_name"  
     if [ $? -ne 0 ] 
     then  
-        yum install "$i INSTALLATION"
+        yum install $i -y &>>$LOGFILE
+        VALIDATE $? "$i INSTALLATION"
      else
-       echo -e "$G $i installation already happened"   
+       echo -e "$G $i installation already happened" 
+       exit 1  
     fi  
 done    
