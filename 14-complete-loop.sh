@@ -8,15 +8,16 @@ N="\e[0m"
 for i in $@
 do
     package_name=$i
-    rpm -q "$package_name"
-    if [ $? eq 0 ] then
-      echo -e "$G $i already installed"
-    else   
+    rpm -q "$package_name"  
+    if [ $? -ne 0 ] 
+    then  
         yum install $i -y
         if [ $? -eq 0 ]
         echo -e "$G $i installation successful"
         else
         echo -e "$R $i installation fail"
         fi
-    fi    
+     else
+       echo -e "$G $i installation already happened"   
+    fi  
 done    
