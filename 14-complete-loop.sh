@@ -10,9 +10,9 @@ VALIDATE ()
 {
   if [ $? -ne 0 ]
   then 
-     echo "$R $i Installation Failed"
+     echo -e "$R $i Installation Failed"
   else 
-     echo "$G $i Installation Success"  
+     echo -e "$G $i Installation Success"  
   fi    
 }
 if [ $USERID -ne 0 ]
