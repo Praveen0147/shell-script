@@ -12,4 +12,13 @@ then
    exit 3
 else 
    echo "Installation success"
- fi  
+ fi
+
+ yum postfix mysql -y
+if [ $? -ne 0 ]
+then
+   echo " Installation of postfix is not succesful"
+   exit 3
+else 
+   echo "Installation of postfix success"
+ fi
