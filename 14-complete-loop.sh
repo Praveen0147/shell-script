@@ -29,6 +29,6 @@ do
         yum install $i -y &>>$LOGFILE
         VALIDATE $? $i
      else
-       echo -e "$G $i installation already Installed"  
+       echo -e "$G $i already Installed"  
     fi  
 done    
