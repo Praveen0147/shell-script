@@ -14,7 +14,7 @@ else
    echo "Installation success"
  fi
 
- yum postfix mysql -y
+ yum install postfix -y
 if [ $? -ne 0 ]
 then
    echo " Installation of postfix is not succesful"
