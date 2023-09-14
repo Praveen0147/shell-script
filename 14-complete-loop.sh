@@ -11,7 +11,6 @@ VALIDATE ()
   if [ $? -ne 0 ]
   then 
      echo "$R $i Installation Failed"
-     exit 1
   else 
      echo "$G $i Installation Success"  
   fi    
@@ -30,7 +29,6 @@ do
         yum install $i -y &>>$LOGFILE
         VALIDATE $? $i
      else
-       echo -e "$G $i installation already happened" 
-       exit 1  
+       echo -e "$G $i installation already Installed"  
     fi  
 done    
