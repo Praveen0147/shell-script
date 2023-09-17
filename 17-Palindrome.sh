@@ -1,11 +1,11 @@
 #!/bin/bash
 echo " Enter a word"
-echo " word entered is $1"
+read -s WORD
 #word1=$(echo $1 | tr -d ' ' | tr 'A-Z' 'a-z')
-Reverse=$(echo $1 |rev)
-if ["$1" = "$Reverse" ]
+Reverse=$(echo "$WORD" |rev)
+if ["$WORD" = "$Reverse" ]
 then
-  echo "$i is palindrome"
+  echo "$WORD is palindrome"
 else
-  echo  "$i is not palindrome"
+  echo  "$WORD is not palindrome"
 fi  
