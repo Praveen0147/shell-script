@@ -4,7 +4,7 @@ read -s WORD
 echo " word entered is $WORD"
 #word1=$(echo $1 | tr -d ' ' | tr 'A-Z' 'a-z')
 Reverse=$(echo "$WORD" |rev)
-if ["$WORD" = "$Reverse" ]
+if [ "$WORD" = "$Reverse" ]
 then
   echo "$WORD is palindrome"
 else
