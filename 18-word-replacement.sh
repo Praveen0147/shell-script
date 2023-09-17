@@ -1,5 +1,6 @@
 #!/bin/bash
 File1=$1
-Replace_word=$2
-sed -i "s/.*/$Replace_word/" "$File1"
+old_word=$2
+new_word=$3
+sed -i "s/.*/$old_word/$new_word/g" "$File1"
 echo "Content of $File1 Replaced, Please check"
