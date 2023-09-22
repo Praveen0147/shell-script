@@ -30,6 +30,7 @@ do
     then
         message+="HIGH DISK USAGE on $partition: $usage $L "
     fi
+    echo "Loop test:"
 done <<< $DISK_USAGE
 
 echo -e "message: $message"
